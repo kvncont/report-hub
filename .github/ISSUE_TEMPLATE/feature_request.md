@@ -1,9 +1,10 @@
 ---
-name: 🚀 New Feature
+name: New Feature
 about: Suggestion for a new feature or enhancement
-title: ''
+title: '🚀'
 labels: 'enhancement'
 assignees: 'kvncont'
+status: '📋 Backlog'
 
 ---
 
