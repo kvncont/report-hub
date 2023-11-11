@@ -1,20 +1,26 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: New Feature
+about: Suggestion for a new feature or enhancement
 title: ''
-labels: ''
+labels: 'enhancement'
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+# New Feature
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## Description
+<!-- Briefly describe the new feature or enhancement you would like to propose. -->
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Tasks
+<!-- List specific tasks that need to be done to implement this feature. -->
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+- [ ] Task 1
+- [ ] Task 2
+- [ ] ...
+
+## Considerations
+<!-- Include any additional considerations or relevant information that should be considered. -->
+
+## Dependencies
+<!-- List any dependencies or relationships with other issues or projects. -->
