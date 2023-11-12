@@ -1,4 +1,4 @@
-name: Report Hub
+name: Report Hub CI
 
 on:
   push:
