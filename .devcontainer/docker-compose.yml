@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  report-hub:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace:cached
+    depends_on:
+      - report-templates
+
+  report-templates:
+    image: nginx:latest
+    volumes:
+      - ../../report-templates/templates:/usr/share/nginx/html
