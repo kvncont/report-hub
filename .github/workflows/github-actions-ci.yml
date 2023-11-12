@@ -16,7 +16,7 @@ jobs:
       run: docker build . --file Dockerfile --tag report-hub
 
     - name: Run tests
-      run: docker run -v $(pwd):/app -it report-hub pip install -r requirements-test.txt && pytest --disable-warnings --cov
+      run: docker run -v $(pwd):/app -i report-hub pip install -r requirements-test.txt && pytest --disable-warnings --cov
 
     - name: Upload coverage to GitHub
       uses: actions/upload-artifact@v2
