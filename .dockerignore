@@ -1,0 +1,49 @@
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore test directory
+tests/
+
+# Ignore git directory and .git* filles
+.git/
+.gitignore
+.gitattributes
+
+# Ignore files related to virtual environments
+venv/
+*.venv
+.env
+
+# Ignore Dockerfile and docker-compose files
+Dockerfile
+docker-compose.yml
+
+# Ignore log files
+*.log
+
+# Ignore cache files
+.cache/
+*.cache/
+
+# Ignore local configuration files
+*.cfg
+*.ini
+*.json
+
+# Ignore vscode files
+.vscode/
+
+# Ignore infra directoriy
+infra/
+
+# Ignore .devcontainer directory
+.devcontainer/
+
+# Ignore .github directory
+.github/
+
+# Ignore .coverage file
+.coverage
