@@ -1,0 +1,34 @@
+name: Report Hub
+
+on:
+  push:
+    branches: [ '*' ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag report-hub
+
+    - name: Run tests
+      run: docker run -v $(pwd):/app -it report-hub pip install -r requirements-test.txt && pytest --disable-warnings --cov
+
+    - name: Upload coverage to GitHub
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: .coverage
+
+    - name: Push the Docker image
+      if: success()
+      run: |
+        docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+        docker tag report-hub docker.pkg.github.com/${{ github.repository }}/report-hub:latest
+        docker tag report-hub docker.pkg.github.com/${{ github.repository }}/report-hub:$(date +%s)
+        docker push docker.pkg.github.com/${{ github.repository }}/report-hub:latest
+        docker push docker.pkg.github.com/${{ github.repository }}/report-hub:$(date +%s)
