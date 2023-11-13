@@ -39,8 +39,8 @@ jobs:
     - name: Push the Docker image
       if: success()
       run: |
-        docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-        docker tag report-hub docker.pkg.github.com/${{ github.repository }}/report-hub:latest
-        docker tag report-hub docker.pkg.github.com/${{ github.repository }}/report-hub:$(date +%s)
-        docker push docker.pkg.github.com/${{ github.repository }}/report-hub:latest
-        docker push docker.pkg.github.com/${{ github.repository }}/report-hub:$(date +%s)
+        docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+        docker tag report-hub ghcr.io/${{ github.repository }}/report-hub:latest
+        docker tag report-hub ghcr.io/${{ github.repository }}/report-hub:${{ github.run_number}}.${{ github.run_id}}
+        docker push ghcr.io/${{ github.repository }}/report-hub:latest
+        docker push ghcr.io/${{ github.repository }}/report-hub:${{ github.run_number}}.${{ github.run_id}}

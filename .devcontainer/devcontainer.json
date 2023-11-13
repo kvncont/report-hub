@@ -19,6 +19,7 @@
     "vscode": {
       "extensions": [
         "ms-python.python",
+        "ms-vscode.vscode-speech",
         "GitHub.codespaces",
         "GitHub.copilot",
         "GitHub.vscode-pull-request-github",
@@ -40,6 +41,7 @@
         "editor.detectIndentation": false,
         "editor.tabSize": 4,
         "files.encoding": "utf8",
+        "github.copilot.chat.localeOverride": "auto",
         "terminal.integrated.scrollback": 20000,
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "[jsonc]": {
