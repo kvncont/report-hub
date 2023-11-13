@@ -2,6 +2,7 @@
   "name": "Report Hub",
   "dockerComposeFile": "docker-compose.yml",
   "service": "report-hub", // The service in docker-compose.yml that we want vs code to use as a dev containers
+  "runServices": ["report-templates"], // The services in docker-compose.yml that we want to run in the background
   "shutdownAction": "stopCompose",
   "workspaceFolder": "/workspace/",
   "overrideCommand": true,
@@ -14,29 +15,24 @@
       "label": "Report Templates (Nginx)"
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/azure-cli:1": {},
-    "ghcr.io/devcontainers/features/terraform:1": {},
-    "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
-  },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        // "ms-python.vscode-pylance",
+        "GitHub.codespaces",
+        "GitHub.copilot",
+        "GitHub.vscode-pull-request-github",
+        "GitHub.remotehub",
+        "GitHub.github-vscode-theme",
+        "github.vscode-github-actions",
+        "esbenp.prettier-vscode",
+        "hashicorp.terraform",
         "ms-python.black-formatter",
         "ms-python.debugpy",
         "ms-python.isort",
         "ms-python.pylint",
-        "esbenp.prettier-vscode",
         "Postman.postman-for-vscode",
-        "GitHub.copilot",
-        "GitHub.codespaces",
-        "GitHub.remotehub",
-        "hashicorp.terraform",
-        "github.vscode-github-actions",
-        "GitHub.github-vscode-theme",
-        "GitHub.vscode-pull-request-github"
+        "ms-python.vscode-pylance"
       ],
       "settings": {
         "editor.bracketPairColorization.enabled": true,
@@ -47,12 +43,10 @@
         "terminal.integrated.scrollback": 20000,
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "[jsonc]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.tabSize": 4
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "[json]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.tabSize": 4
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "[python]": {
           "editor.defaultFormatter": "ms-python.black-formatter",
@@ -62,7 +56,16 @@
       }
     }
   },
-  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt -r requirements-test.txt",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
+  },
+  "initializeCommand": "whoami",
+  "onCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt -r requirements-test.txt",
+  "updateContentCommand": "echo Updated",
+  "postCreateCommand": "echo Created",
+  "postAttachCommand": "echo Attached",
   "postStartCommand": "uvicorn app.main:app --reload --log-config log_conf.yml",
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"

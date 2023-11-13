@@ -1,16 +1,14 @@
 # Ignore Python bytecode
-__pycache__/
+**/__pycache__
 *.pyc
 *.pyo
 *.pyd
 
-# Ignore test directory
-tests/
+# Ignore Pytest cache
+**/.pytest_cache
 
-# Ignore git directory and .git* filles
+# Ignore git directory
 .git/
-.gitignore
-.gitattributes
 
 # Ignore files related to virtual environments
 venv/
@@ -33,17 +31,5 @@ docker-compose.yml
 *.ini
 *.json
 
-# Ignore vscode files
-.vscode/
-
-# Ignore infra directoriy
-infra/
-
-# Ignore .devcontainer directory
-.devcontainer/
-
-# Ignore .github directory
-.github/
-
-# Ignore .coverage file
-.coverage
+# Ignore .DS_Store file
+**/.DS_Store
