@@ -1,6 +1,6 @@
 variable "solution_name" {
   type        = string
-  description = "The name of the solution"
+  description = "The uname of the solution"
   default     = "report-hub"
 }
 
