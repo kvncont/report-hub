@@ -5,6 +5,13 @@ terraform {
       version = ">=3.80.0"
     }
   }
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "kvncont"
+    workspaces {
+      name = "report-hub-development"
+    }
+  }
 }
 
 provider "azurerm" {
