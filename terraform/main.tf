@@ -48,6 +48,14 @@ resource "azurerm_container_app" "report_hub" {
   resource_group_name          = azurerm_resource_group.report_hub.name
   revision_mode                = "Single"
 
+  ingress {
+    target_port      = 80
+    external_enabled = true
+    traffic_weight {
+      percentage = 100
+    }
+  }
+
   template {
     container {
       name   = var.solution_name
