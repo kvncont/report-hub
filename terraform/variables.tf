@@ -31,4 +31,5 @@ variable "registry_username" {
 variable "registry_password" {
   type        = string
   description = "Password for the container registry"
+  sensitive   = true
 }
