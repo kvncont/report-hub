@@ -1,4 +1,5 @@
-# Dockerfile for dev and pro environments
+# Dockerfile for dev and pro environmentss
+
 
 # Use an official Python runtime as a parent image
 FROM python:3.12-slim-bullseye
