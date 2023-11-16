@@ -51,7 +51,7 @@ resource "azurerm_container_app" "report_hub" {
   template {
     container {
       name   = var.solution_name
-      image  = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
+      image  = "ghcr.io/kvncont/report-hub/report-hub:5.6846245152"
       cpu    = 0.25
       memory = "0.5Gi"
     }
