@@ -9,7 +9,7 @@ from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from jinja2 import Environment
 from weasyprint import HTML
 
-from app.models.report import Report
+from .models.report import Report
 
 app = FastAPI()
 
