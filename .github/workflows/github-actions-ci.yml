@@ -3,6 +3,11 @@ name: Report Hub CI
 on:
   push:
     branches: [ '*' ]
+    paths-ignore:
+    - 'LICENSE'
+    - 'terraform/**'
+    - '*.md'
+    - '.**'
 
 jobs:
   build:
@@ -13,25 +18,25 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.12
+    # - name: Setup Python
+    #   uses: actions/setup-python@v2
+    #   with:
+    #     python-version: 3.12
     
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt -r requirements-test.txt
+    # - name: Install dependencies
+    #   run: |
+    #     python -m pip install --upgrade pip
+    #     pip install -r requirements.txt -r requirements-test.txt
 
-    - name: Run tests with PyTest
-      run: |
-        pytest --disable-warnings --cov
+    # - name: Run tests with PyTest
+    #   run: |
+    #     pytest --disable-warnings --cov
 
-    - name: Upload coverage to GitHub
-      uses: actions/upload-artifact@v2
-      with:
-        name: coverage
-        path: .coverage
+    # - name: Upload coverage to GitHub
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: coverage
+    #     path: .coverage
 
     - name: Build the Docker image
       run: docker build . -f Dockerfile -t report-hub

@@ -62,7 +62,7 @@ def test_create_pdf_report_ok(input_data, expected):
                             "templateUrl": "https://mock-template/example/",
                             "data": {"message": "World"},
                         },
-                        "url": "https://errors.pydantic.dev/2.4/v/missing",
+                        "url": "https://errors.pydantic.dev/2.5/v/missing",
                     }
                 ]
             },
@@ -82,7 +82,7 @@ def test_create_pdf_report_ok(input_data, expected):
                             "name": "test",
                             "data": {"message": "World"},
                         },
-                        "url": "https://errors.pydantic.dev/2.4/v/missing",
+                        "url": "https://errors.pydantic.dev/2.5/v/missing",
                     }
                 ]
             },
@@ -98,7 +98,7 @@ def test_create_pdf_report_ok(input_data, expected):
                         "input": {
                             "data": {"message": "World"},
                         },
-                        "url": "https://errors.pydantic.dev/2.4/v/missing",
+                        "url": "https://errors.pydantic.dev/2.5/v/missing",
                     },
                     {
                         "type": "missing",
@@ -107,7 +107,7 @@ def test_create_pdf_report_ok(input_data, expected):
                         "input": {
                             "data": {"message": "World"},
                         },
-                        "url": "https://errors.pydantic.dev/2.4/v/missing",
+                        "url": "https://errors.pydantic.dev/2.5/v/missing",
                     },
                 ]
             },
