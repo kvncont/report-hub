@@ -52,7 +52,7 @@ resource "azurerm_container_app" "report_hub" {
   template {
     container {
       name   = var.solution_name
-      image  = "ghcr.io/kvncont/report-hub/report-hub:5.6846245152"
+      image  = "ghcr.io/kvncont/report-hub/report-hub:16.6900694147"
       cpu    = 0.25
       memory = "0.5Gi"
     }
