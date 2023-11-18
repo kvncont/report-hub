@@ -59,4 +59,4 @@ USER fastapi
 EXPOSE 80
 
 # Run the application with Uvicorn
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80", "--log-config", "log_conf.yml"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--log-config", "log_conf.yml"]
