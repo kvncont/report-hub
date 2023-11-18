@@ -42,20 +42,23 @@ resource "azurerm_container_app" "report_hub" {
   revision_mode                = "Single"
 
   ingress {
-    target_port      = 80
+    target_port      = 8000
     external_enabled = true
     traffic_weight {
-      percentage = 100
+      percentage      = 100
+      latest_revision = true
     }
   }
 
   template {
     container {
       name   = var.solution_name
-      image  = "ghcr.io/kvncont/report-hub/report-hub:16.6900694147"
+      image  = "ghcr.io/kvncont/report-hub/report-hub:17.6912200169"
       cpu    = 0.25
       memory = "0.5Gi"
     }
+    min_replicas = 0
+    max_replicas = 2
   }
 
   secret {
