@@ -7,8 +7,6 @@ assignees: 'kvncont'
 
 ---
 
-# New Feature
-
 ## Description
 <!-- Briefly describe the new feature or enhancement you would like to propose. -->
 
